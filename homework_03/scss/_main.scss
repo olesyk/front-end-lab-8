@@ -1,0 +1,148 @@
+$mainBackground: null !default;
+$briefBackground: null !default;
+$contentBackground: null !default;
+$headingColor: null !default;
+$fontColor: null !default;
+$buttonColor: null !default;
+$theadColor: null !default;
+$formColor: null !default;
+$tbodyColor: null !default;
+$captionColor: #000000 !default;
+$widthContent: 960px;
+@mixin briefDiv($color) {
+	background-color: $color;
+	@if $varientPage1 {
+		width: 380px;
+		display: inline-block;
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 10px;
+	}
+	@else {
+		margin-bottom: 30px;
+	}
+}
+
+@mixin tbodyBackgroundColor($color) {
+	background-color: $color;
+}
+
+body {
+	margin: 0;
+	background-color: $mainBackground;
+	color: $fontColor;
+}
+
+#content {
+	margin: 10px auto;
+	padding: 5px 20px 15px 20px;
+	background-color: $contentBackground;
+	width: $widthContent;
+	h2 {
+		color: $headingColor;
+	}
+	h1 {
+		@extend h2;
+		text-align: center;
+		@if $varientPage1 {
+			text-transform: capitalize;
+		}
+		@else {
+			text-transform: uppercase;
+		}
+	}
+}
+
+img {
+	border: 2px solid $headingColor;
+	padding: 2px;
+	display: inline-block;
+	&.img-left {
+		float: left;
+		margin-right: 20px;
+	}
+	&.img-right {
+		float: right;
+		margin-left: 20px;
+	}
+}
+
+.brief {
+	@include briefDiv($briefBackground);
+	padding: 20px;
+	color: $captionColor;
+}
+
+table {
+	text-align: left;
+	margin-bottom: 60px;
+	border: none;
+	border-collapse: collapse;
+	width: $widthContent - 60px;
+	caption {
+		text-align: right;
+		color: $captionColor;
+	}
+	tbody {
+		@include tbodyBackgroundColor($tbodyColor);
+	}
+}
+
+tr {
+	&:first-child {
+		background-color: $theadColor;
+		text-transform: uppercase;
+	}
+	th,
+	td {
+		font-weight: normal;
+		padding: 10px 0px 10px 20px;
+		border-bottom: 1px solid $theadColor;
+	}
+	th {
+		border-right: 1px solid #ffffff;
+		color: $captionColor;
+		&:last-child {
+			border-right: none;
+		}
+	}
+}
+
+a {
+	color: $buttonColor;
+}
+
+.flex-box {
+	display: flex;
+	justify-content: space-between;
+	& .flex-item {
+		flex-basis: 49%;
+	}
+}
+
+label {
+	text-transform: uppercase;
+	color: $formColor;
+}
+
+input {
+	display: block;
+	width: 100%;
+	margin: 5px 0 15px 0;
+}
+
+textarea {
+	width: 100%;
+	height: 160px;
+	margin-top: 5px;
+}
+
+button {
+	color: $buttonColor;
+	border: 1px solid $buttonColor;
+	background-color: $contentBackground;
+	text-transform: uppercase;
+	padding: 10px 65px;
+	margin: 25px 0 20px 0;
+	font-size: 1.5em;
+}
