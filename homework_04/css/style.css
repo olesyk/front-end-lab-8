@@ -274,6 +274,10 @@ footer p {
 }
 
 #contact {
+	flex-basis: 20%;
+}
+
+#contact  .subscribe_text{
 	line-height: 1.7em;
 	padding: 15px 0px;
 }
