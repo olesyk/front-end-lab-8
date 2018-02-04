@@ -21,7 +21,7 @@ header {
 .header_top {
 	display: flex;
 	justify-content: flex-end;
-	font-size: 15px;
+	font-size: 0.9em;
 	color: #fff;
 	padding-top: 30px;
 }
@@ -66,19 +66,19 @@ header {
 
 .logo_big span {
 	font-size: 2em;
-	font-family: verdanna;
+	font-family: "Verdanna";
 }
 
 .logo_big p:first-child::after {
 	content: "TM";
 	font-size: 0.3em;
 	letter-spacing: normal;
-	vertical-align: 23px;
+	vertical-align: 1.7em;
 }
 
 .slang {
 	text-transform: capitalize;
-	font-size: 15px;
+	font-size: 0.9em;
 	word-spacing: 5px;
 }
 
@@ -102,19 +102,18 @@ header {
 .lorem .content {
 	display: flex;
 	justify-content: space-between;
-	padding-top: 140px;
-	padding-bottom: 140px;
+	padding: 140px 0;
 }
 
 .lorem .content p:first-child {
 	width: 40%;
-	font-size: 23px;
+	font-size: 1.4em;
 	line-height: 1.7;
 }
 
 .lorem .content p:last-child {
 	width: 50%;
-	font-size: 15px;
+	font-size: 0.9em;
 }
 
 
@@ -209,8 +208,8 @@ img {
 }
 
 .form_message {
-	font-size: 24px;
-	padding-top: 10px;
+	font-size: 1.4em;
+	align-self: center;
 	margin-left: 3%;
 }
 
@@ -226,7 +225,7 @@ img {
 	width: 60%;
 	border: 1px solid #343638;
 	background-color: #f3f3f3;
-	padding-left: 4%;
+	padding-left: 3%;
 }
 
 .form_subscribe input[type=text]::placeholder {
@@ -236,7 +235,7 @@ img {
 
 .form_subscribe input[type=button] {
 	height: 60px;
-	width: 37%;
+	width: 30%;
 	color: #f3f3f3;
 	background-color: #343638;
 	border: 1px solid #343638;
@@ -246,7 +245,10 @@ img {
 /*---FOOTER---*/
 
 footer p {
-	font-size: 0.9em;
+	font-size: 0.95em;
+}
+
+footer p {
 	color: #9E9E9E;
 }
 
@@ -261,8 +263,8 @@ footer p {
 }
 
 .subscribe {
-	flex-basis: 18%;
-	line-height: 1.3em;
+	flex-basis: 18.5%;
+	line-height: 1.5em;
 }
 
 .subscribe:last-child {
@@ -274,11 +276,11 @@ footer p {
 }
 
 #contact {
-	flex-basis: 20%;
+	flex-basis: 17%;
 }
 
-#contact  .subscribe_text{
-	line-height: 1.7em;
+#contact .subscribe_text {
+	line-height: 2em;
 	padding: 15px 0px;
 }
 
@@ -302,10 +304,20 @@ footer p {
 
 .footer_header .form_subscribe input[type=button] {
 	height: 50px;
+	width: 40%;
 }
 
 .footer_header .form_subscribe input[type=text] {
 	height: 48px;
+}
+
+
+/*for firefox and opera*/
+
+hr {
+	border: none;
+	background-color: #E8E8E8;
+	height: 2px;
 }
 
 
