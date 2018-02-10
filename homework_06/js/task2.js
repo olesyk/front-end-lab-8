@@ -1,22 +1,12 @@
-function correctAmount(n) {
-	return !isNaN(parseFloat(n)) && isFinite(n) && (n >= 0) && !~n.search(/\s/) && !n.startsWith("+")};
-var euro = prompt("Input amount of Euro", "");
-var dollar = prompt("Input amount of USD", "");
-var euroRate = 33.85650;
-var dollarRate = 27.46090;
-var r = Math.round(euroRate / dollarRate * 100) / 100;
+'use strict'
+const correctAmount = n => /^\d+(\.\d+)?$/.test(n);
+const euro = prompt("Input amount of Euro", "");
+const dollar = prompt("Input amount of USD", "");
+const euroRate = 33.85650;
+const dollarRate = 27.46090;
 
-var str1, str2;
-if (!correctAmount(euro)) {
-	str1 = "Incorrect amount for Euro!\n";
-} else {
-	str1 = euro + ' euros are equal ' + (Math.round(euro * euroRate * 100) / 100) + ' UAH, ';
-}
+const str1 = correctAmount(euro) ? `${euro} euros are equal ${Math.round(euro * euroRate * 100) / 100} UAH,` : `Incorrect amount for Euro,`;
 
-if (!correctAmount(dollar)) {
-	str2 = "Incorrect amount for USD!\n";
-} else {
-	str2 = dollar + ' dollars are equal ' + (Math.round(dollar * dollarRate * 100) / 100) + ' UAH, ';
-}
+const str2 = correctAmount(dollar) ? `${dollar} dollars are equal ${Math.round(dollar * dollarRate * 100) / 100} UAH,` : `Incorrect amount for USD,`;
 
-console.log(str1 + str2 + 'one euro is equal ' + r + ' dollars.');
+console.log(`${str1} ${str2} one euro is equal ${Math.round(euroRate / dollarRate * 100) / 100} dollars.`);
