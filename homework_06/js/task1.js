@@ -1,9 +1,13 @@
-let isCorrectInput = n => !isNaN(parseFloat(n)) && isFinite(n) && n > 0;
+'use strict'
+let a = prompt("Enter side of the triangle", "");
+let b = prompt("Enter side of the triangle", "");
+let c = prompt("Enter side of the triangle", "");
+
+let isCorrectInput = n => !isNaN(parseFloat(n)) && isFinite(n) && n > 0 && !~n.search(/\s/) && !n.startsWith("+"); // two last conditions in function are for such inputs as "+5" or "  25  "
+
+let incorrectData = (x, y, z) => !isCorrectInput(x) || !isCorrectInput(y) || !isCorrectInput(z);
 
 let isNotTriangle = (x, y, z) => (x >= y + z) || (y >= x + z) || (z >= x + y);
-
-
-let incorrectData = (x, y, z) => !isCorrectInput(x) || !isCorrectInput(y) || !isCorrectInput(z) || isNotTriangle(x, y, z);
 
 let typeOfTriangle = (x, y, z) => {
 	let str;
@@ -24,13 +28,15 @@ let squareOfTriangle = (x, y, z) => {
 	return Math.round(S * 100) / 100;
 }
 
-
-const a = +prompt("Enter side of the triangle", "");
-const b = +prompt("Enter side of the triangle", "");
-const c = +prompt("Enter side of the triangle", "");
-
 if (incorrectData(a, b, c)) {
 	console.log("Incorrect data");
 } else {
-	console.log(`Type of triangle is ${typeOfTriangle(a, b, c)} and square is ${squareOfTriangle(a, b, c)}.`);
+	a = parseFloat(a);
+	b = parseFloat(b);
+	c = parseFloat(c);
+	if (isNotTriangle(a, b, c)) {
+		console.log("Incorrect data");
+	} else {
+		console.log(`Type of triangle is ${typeOfTriangle(a, b, c)} and square is ${squareOfTriangle(a, b, c)}.`);
+	}
 }

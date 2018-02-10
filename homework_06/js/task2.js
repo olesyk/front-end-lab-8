@@ -1,9 +1,7 @@
 function correctAmount(n) {
-	return !isNaN(parseFloat(n)) && isFinite(n) && (n >= 0);
-};
-
-var euro = +prompt("Input amount of Euro", "");
-var dollar = +prompt("Input amount of USD", "");
+	return !isNaN(parseFloat(n)) && isFinite(n) && (n >= 0) && !~n.search(/\s/) && !n.startsWith("+")};
+var euro = prompt("Input amount of Euro", "");
+var dollar = prompt("Input amount of USD", "");
 var euroRate = 33.85650;
 var dollarRate = 27.46090;
 var r = Math.round(euroRate / dollarRate * 100) / 100;
