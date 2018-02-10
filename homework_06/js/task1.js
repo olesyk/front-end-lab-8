@@ -40,5 +40,6 @@ if (incorrectData(a, b, c)) {
 	a = parseFloat(a);
 	b = parseFloat(b);
 	c = parseFloat(c);
-	isNotTriangle(a, b, c) ? console.log("Incorrect data") : console.log(`Type of triangle is ${typeOfTriangle(a, b, c)} and square is ${squareOfTriangle(a, b, c)}.`);
+	const message = isNotTriangle(a, b, c) ? "Incorrect data" : `Type of triangle is ${typeOfTriangle(a, b, c)} and square is ${squareOfTriangle(a, b, c)}.`;
+	console.log(message);
 }
