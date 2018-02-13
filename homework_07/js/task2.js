@@ -17,7 +17,7 @@ if (!confirm(`Do you want to play a game?`)) {
 				if (userNumber == randomNumber && /^\d+$/.test(userNumber)) {
 					totalPrize += possiblePrize;
 					break;
-				} else if (attempt === 1 && userNumber != randomNumber) {
+				} else if (attempt === 1 && userNumber !== randomNumber) {
 					totalPrize = 0;
 					break;
 				} else {
@@ -35,6 +35,6 @@ if (!confirm(`Do you want to play a game?`)) {
 			} else {
 				break;
 			}
-		} while (totalPrize != 0);
+		} while (totalPrize !== 0);
 	} while (confirm(`Do you want to play a game again?`));
 }
