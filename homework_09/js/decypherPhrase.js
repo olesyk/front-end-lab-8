@@ -2,7 +2,9 @@
 const decypherPhrase = (obj, str) => {
 	const reverseObj = {};
 	for (let key in obj) {
-		reverseObj[obj[key]] = key;
+		if (obj.hasOwnProperty(key)){
+			reverseObj[obj[key]] = key;
+		}
 	}
 	return cypherPhrase(reverseObj, str);
 }
