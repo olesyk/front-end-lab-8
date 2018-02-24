@@ -32,28 +32,28 @@ function showResult(fighter) {
 }
 
 function fighter(player) {
-	const	combatHistory = {
-			wins: 0,
-			loses:0
-	}
-	return {
-		getName: () => player.name,
-		block: () => Math.random() >= 0.5,
-		getStats: () => player,
-		getCombatHistory: () => combatHistory,
-		fight: enemy => {
-			if (enemy.block()) {
-				return false;
-			} else {
-				enemy.getStats().hp -= player.attack;
-				if (enemy.getStats().hp === 0) {
-					combatHistory.wins++;
-					enemy.getCombatHistory().loses++;
-				}
-			return true;		
-			}
-		}
-	}
+  const	combatHistory = {
+	wins: 0,
+	loses: 0
+  }
+  return {
+	getName: () => player.name,
+	block: () => Math.random() >= 0.5,
+	getStats: () => player,
+	getCombatHistory: () => combatHistory,
+	fight: enemy => {
+	  if (enemy.block()) {
+		return false;
+	  } else {
+	    enemy.getStats().hp -= player.attack;
+	    if (enemy.getStats().hp <= 0) {
+	      combatHistory.wins++;
+		  enemy.getCombatHistory().loses++;
+	    }
+	    return true;		
+	  }
+    }
+  }
 }
 
 /**
