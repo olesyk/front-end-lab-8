@@ -1,0 +1,18 @@
+ul {
+	list-style: none;
+}
+ul li {
+	cursor: pointer;
+}
+.grey:hover {
+	background-color: #eeebeb;
+}
+.folder-icon {
+	color: orange;
+}
+.file-icon {
+	color: #cccccc;
+}
+.warnning {
+	font-style: italic;
+}
