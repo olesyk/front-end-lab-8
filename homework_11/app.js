@@ -1,6 +1,5 @@
 var rootNode = document.getElementById("root");
 
-// Your code goes here
 function createFileTree(arr) {
 	var ul = document.createElement('ul');
 	for (var i = 0; i < arr.length; i++) {
@@ -29,7 +28,8 @@ function createFileTree(arr) {
 	return ul;
 }
 function clickFolder(event) {
-	if (event.target.className != 'grey push') return;
+	const folderClass = 'grey push';
+	if (event.target.className !== folderClass) return;
 	toggleFolder(event.target);
 }
 
