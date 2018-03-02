@@ -58,9 +58,9 @@ div.appendChild(createTanksList(tanks));
 rootNode.appendChild(div);
 
 function addToSessionStorage(arr) {
-	for (let i = 0; i < arr.length; i++){
-		sessionStorage.setItem(arr[i].model, JSON.stringify(arr[i]));
-	}
+  for (let i = 0; i < arr.length; i++) {
+    sessionStorage.setItem(arr[i].model, JSON.stringify(arr[i]));
+  }
 }
 addToSessionStorage(tanks);
 
@@ -125,7 +125,7 @@ window.addEventListener('hashchange', () => {
   const hashText = location.hash.slice(1);
   if (hashText === '') {
     const thumb = document.querySelector('.tank-details');
-	rootNode.replaceChild(div, thumb);  
+    rootNode.replaceChild(div, thumb);
   } else {
     const thumb = createThumbnails(hashText);
     rootNode.replaceChild(thumb, div);
