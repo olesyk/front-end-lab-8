@@ -27,6 +27,7 @@ function addH2(parent, text) {
 function createTanksList(list) {
   const divOfTanks = document.createElement('div');
   divOfTanks.className = 'tanks-list';
+
   for (let i = 0; i < list.length; i++) {
     const divItem = document.createElement('div');
     divItem.className = 'item';
@@ -49,13 +50,13 @@ function createTanksList(list) {
   return divOfTanks;
 }
 
-const div = document.createElement('div');
-div.className = 'thumbnails';
+const divThumbnails = document.createElement('div');
+divThumbnails.className = 'thumbnails';
 const h1 = document.createElement('h1');
 h1.innerHTML = 'Most popular tanks';
-div.appendChild(h1);
-div.appendChild(createTanksList(tanks));
-rootNode.appendChild(div);
+divThumbnails.appendChild(h1);
+divThumbnails.appendChild(createTanksList(tanks));
+rootNode.appendChild(divThumbnails);
 
 function addToSessionStorage(arr) {
   for (let i = 0; i < arr.length; i++) {
@@ -84,7 +85,7 @@ function createTable(model) {
   }
 }
 
-function createThumbnails(model) {
+function createTankDetails(model) {
   const modelObj = JSON.parse(sessionStorage.getItem(model));
   const divOfTank = document.createElement('div');
   divOfTank.className = 'tank-details';
@@ -124,10 +125,10 @@ function createThumbnails(model) {
 window.addEventListener('hashchange', () => {
   const hashText = location.hash.slice(1);
   if (hashText === '') {
-    const thumb = document.querySelector('.tank-details');
-    rootNode.replaceChild(div, thumb);
+    const tankDetails = document.querySelector('.tank-details');
+    rootNode.replaceChild(divThumbnails, tankDetails);
   } else {
-    const thumb = createThumbnails(hashText);
-    rootNode.replaceChild(thumb, div);
+    const tankDetails = createTankDetails(hashText);
+    rootNode.replaceChild(tankDetails, divThumbnails);
   }
 });
