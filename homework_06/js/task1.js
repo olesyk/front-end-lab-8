@@ -1,7 +1,7 @@
 'use strict'
-let a = prompt("Enter side of the triangle", "");
-let b = prompt("Enter side of the triangle", "");
-let c = prompt("Enter side of the triangle", "");
+let a = prompt("Enter side of the triangle");
+let b = prompt("Enter side of the triangle");
+let c = prompt("Enter side of the triangle");
 
 const isCorrectInput = n => /^\d+(\.\d+)?$/.test(n);
 

@@ -1,7 +1,7 @@
 'use strict'
 const correctAmount = n => /^\d+(\.\d+)?$/.test(n);
-const euro = prompt("Input amount of Euro", "");
-const dollar = prompt("Input amount of USD", "");
+const euro = prompt("Input amount of Euro");
+const dollar = prompt("Input amount of USD");
 const euroRate = 33.85650;
 const dollarRate = 27.46090;
 
