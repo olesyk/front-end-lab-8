@@ -49,16 +49,16 @@ function createTanksList(list) {
   return divOfTanks;
 }
 
-var div = document.createElement('div');
+const div = document.createElement('div');
 div.className = 'thumbnails';
-var h1 = document.createElement('h1');
+const h1 = document.createElement('h1');
 h1.innerHTML = 'Most popular tanks';
 div.appendChild(h1);
 div.appendChild(createTanksList(tanks));
 rootNode.appendChild(div);
 
 function addToSessionStorage(arr) {
-	for (var i = 0; i < arr.length; i++){
+	for (let i = 0; i < arr.length; i++){
 		sessionStorage.setItem(arr[i].model, JSON.stringify(arr[i]));
 	}
 }
