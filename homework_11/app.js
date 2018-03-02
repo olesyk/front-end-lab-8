@@ -28,7 +28,7 @@ function createFileTree(arr) {
 	return ul;
 }
 function clickFolder(event) {
-	const folderClass = 'grey push';
+	var folderClass = 'grey push';
 	if (event.target.className !== folderClass) return;
 	toggleFolder(event.target);
 }
